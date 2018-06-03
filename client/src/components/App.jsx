@@ -1,21 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class App extends Component {
-  state = {
-    data: ""
-  }
+import SignUpForm from './SignUp';
 
-  componentDidMount() {
-    axios.get('/api/hello').then(res => {
-      console.log(res.data)
-    })
-  }
+class App extends Component {
 
   render() {
     return(
       <div>
-        <h1>Welcome to starter project</h1>
+        <SignUpForm />
       </div>
     )
   }

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.dev.js",
+    "watch": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
     "test": "jest ./test"
   },
@@ -16,8 +16,10 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
+    "prop-types": "^15.6.1",
     "react": "^16.4.0",
-    "react-dom": "^16.4.0"
+    "react-dom": "^16.4.0",
+    "styled-components": "^3.1.0-3"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
