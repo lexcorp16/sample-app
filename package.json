@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon server.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
-    "test": "cross-env NODE_ENV=test nyc --reporter=html --reporter=text jasmine"
+    "test": "nyc --reporter=html --reporter=text jasmine"
   },
   "keywords": [],
   "author": "",
