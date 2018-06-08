@@ -1,5 +1,22 @@
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
-  background: black;
+* {
+  box-sizing: border-box;
+  color: #414042;
+  font-family: 'Proza Libre', 'Helvetica Neue', sans-serif;
 }
+
+body, html, #app {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #ebebeb;
+}
+
+.center-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+
