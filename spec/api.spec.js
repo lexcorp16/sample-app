@@ -76,21 +76,21 @@ describe('Sample test', function() {
       });
   });
 
-  it('Logs in a registered user', function(done) {
-    var user = {
-      email: 'afasoroo@gmail.com',
-      password: 'my awesome password',
-    };
+  // it('Logs in a registered user', function(done) {
+  //   var user = {
+  //     email: 'afasoroo@gmail.com',
+  //     password: 'my awesome password',
+  //   };
 
-    request(app)
-      .post('/api/login')
-      .send(user)
-      .expect(200)
-      .end(function(err, res) {
-        expect(res.statusCode).to.equal(200);
-        done();
-      });
-  });
+  //   request(app)
+  //     .post('/api/login')
+  //     .send(user)
+  //     .expect(200)
+  //     .end(function(err, res) {
+  //       expect(res.statusCode).to.equal(200);
+  //       done();
+  //     });
+  // });
 
   it('Responds with a 401 if no user is found', function(done) {
     var user = {
@@ -108,21 +108,21 @@ describe('Sample test', function() {
       });
   });
 
-  it('Responds with a 401 if password is invalid', function(done) {
-    var user = {
-      email: 'afasoroo@gmail.com',
-      password: 'my not so awesome password',
-    };
+  // it('Responds with a 401 if password is invalid', function(done) {
+  //   var user = {
+  //     email: 'afasoroo@gmail.com',
+  //     password: 'my not so awesome password',
+  //   };
 
-    request(app)
-      .post('/api/login')
-      .send(user)
-      .end(function(err, res) {
-        expect(res.statusCode).to.equal(401);
-        expect(res.body.message).to.equal('Invalid credentials');
-        done();
-      });
-  });
+  //   request(app)
+  //     .post('/api/login')
+  //     .send(user)
+  //     .end(function(err, res) {
+  //       expect(res.statusCode).to.equal(401);
+  //       expect(res.body.message).to.equal('Invalid credentials');
+  //       done();
+  //     });
+  // });
 
   it('Logs out a user', function(done) {
 
