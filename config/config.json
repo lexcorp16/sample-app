@@ -8,9 +8,9 @@
     "dialect": "postgres"
   },
   "test": {
-    "username": "testt",
-    "password": "xandercage",
-    "database": "database2",
+    "username": "foo",
+    "password": "bar",
+    "database": "testing_db",
     "host": "127.0.0.1",
     "port": 5432,
     "dialect": "postgres"
