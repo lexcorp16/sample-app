@@ -14,7 +14,6 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: 5em;
 `;
 
 const FormBody = styled.div`
@@ -25,10 +24,12 @@ const FormBody = styled.div`
 `;
 
 const Form = styled.form`
+  background-color: #f9f9f9;
   border: 1px solid #f1f1f1;
-  border-radius: 10px;
-  padding: 2em 0;
-  width: 50%;
+  border-radius: 5px;
+  min-width: 300px;
+  padding: 3em 0;
+  width: 40%;
 `;
 
 const Error = styled.p`

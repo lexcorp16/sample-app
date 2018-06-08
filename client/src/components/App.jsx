@@ -4,13 +4,12 @@ import axios from 'axios';
 import SignUpForm from './SignUp';
 
 class App extends Component {
-
   render() {
-    return(
-      <div>
+    return (
+      <div className="center-content">
         <SignUpForm />
       </div>
-    )
+    );
   }
 }
 

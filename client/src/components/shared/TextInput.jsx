@@ -8,24 +8,26 @@ import PropTypes from 'prop-types';
 
 const Input = styled.input`
   border: 1px solid #dddddd;
-  border-radius: 10px;
-  font-size: 0.9em;
-  height: 35px;
+  border-radius: 5px;
+  font-size: 0.75em;
+  height: 30px;
   margin: 5px 1px 5px 0px;
   outline: none;
   padding: 3px 10px 3px 10px;
-  width: 300px;
+  width: 100%;
 
   &:focus {
-    border: 1px solid rgba(63, 81, 181, 0.8);
-    box-shadow: 0 0 10px rgba(63, 81, 181, 0.8);
+    box-shadow: 0 0 10px rgba(60, 140, 74, 0.6);
   }
 `;
 
 const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
   margin-bottom: 1.2em;
+  width: 70%;
+
+  label {
+    display: block;
+  }
 `;
 // ========================================
 
