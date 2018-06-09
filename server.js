@@ -6,7 +6,7 @@ const cors = require('cors');
 const routes = require('./routes');
 const userRoutes = require('./routes/users');
 
-const PORT = 3300;
+const PORT = process.env.PORT || 3300;
 
 const app = express();
 
