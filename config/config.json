@@ -14,5 +14,13 @@
     "host": "127.0.0.1",
     "port": 5432,
     "dialect": "postgres"
+  },
+  "production": {
+    "username": "bffenqdqajmsoe",
+    "password": "216f66ce6a2d1d107e115094036d81f170600f6ce35454ea325430a9e54d1da3",
+    "database": "df22h3n5boludj",
+    "host": "ec2-54-225-107-174.compute-1.amazonaws.com",
+    "port": 5432,
+    "dialect": "postgres"
   }
 }
