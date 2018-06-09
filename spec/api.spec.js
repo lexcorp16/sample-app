@@ -30,7 +30,7 @@ describe('Sample test', function() {
   });
 
   it("sends a message when accessing /api/hello with correct token", function (done) {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDUsImlhdCI6MTUyODM3ODEwMCwiZXhwIjoxNTI4NDY0NTAwfQ.6zUfg9lxMhCaGil6xFffSM4LRwiywbZCgwP2B87a-54'
+    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNTI4NTU1OTI2LCJleHAiOjE1Mjg2NDIzMjZ9.XDZRc4bVGh8H8Vk1pKTL8q48DBj6S3Yevb44qwIe9Hs'
     request(app)
       .get('/api/hello')
       .set('x-access-token', token)
@@ -66,7 +66,7 @@ describe('Sample test', function() {
     };
 
     request(app)
-      .post('/api/register')
+      .post('/api/v1/users/register')
       .send(user)
       .expect(200)
       .end(function(err, res) {
@@ -76,21 +76,21 @@ describe('Sample test', function() {
       });
   });
 
-  // it('Logs in a registered user', function(done) {
-  //   var user = {
-  //     email: 'afasoroo@gmail.com',
-  //     password: 'my awesome password',
-  //   };
+  it('Logs in a registered user', function(done) {
+    var user = {
+      email: 'afasoroo@gmail.com',
+      password: 'my awesome password',
+    };
 
-  //   request(app)
-  //     .post('/api/login')
-  //     .send(user)
-  //     .expect(200)
-  //     .end(function(err, res) {
-  //       expect(res.statusCode).to.equal(200);
-  //       done();
-  //     });
-  // });
+    request(app)
+      .post('/api/v1/users/login')
+      .send(user)
+      .expect(200)
+      .end(function(err, res) {
+        expect(res.statusCode).to.equal(200);
+        done();
+      });
+  });
 
   it('Responds with a 401 if no user is found', function(done) {
     var user = {
@@ -99,7 +99,7 @@ describe('Sample test', function() {
     };
 
     request(app)
-      .post('/api/login')
+      .post('/api/v1/users/login')
       .send(user)
       .expect(404)
       .end(function(err, res) {
@@ -108,26 +108,26 @@ describe('Sample test', function() {
       });
   });
 
-  // it('Responds with a 401 if password is invalid', function(done) {
-  //   var user = {
-  //     email: 'afasoroo@gmail.com',
-  //     password: 'my not so awesome password',
-  //   };
+  it('Responds with a 401 if password is invalid', function(done) {
+    var user = {
+      email: 'afasoroo@gmail.com',
+      password: 'my not so awesome password',
+    };
 
-  //   request(app)
-  //     .post('/api/login')
-  //     .send(user)
-  //     .end(function(err, res) {
-  //       expect(res.statusCode).to.equal(401);
-  //       expect(res.body.message).to.equal('Invalid credentials');
-  //       done();
-  //     });
-  // });
+    request(app)
+      .post('/api/v1/users/login')
+      .send(user)
+      .end(function(err, res) {
+        expect(res.statusCode).to.equal(401);
+        expect(res.body.message).to.equal('Invalid credentials');
+        done();
+      });
+  });
 
   it('Logs out a user', function(done) {
 
     request(app)
-      .post('/api/logout')
+      .post('/api/v1/users/logout')
       .end(function(err, res) {
         expect(res.statusCode).to.equal(200);
         expect(res.body.auth).to.equal(false);
